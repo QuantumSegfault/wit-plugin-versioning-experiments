@@ -1,0 +1,15 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/*",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[workspace.dependencies]
+wit-bindgen = "0.56.0"
+wasmtime = "42.0"
+wasmtime-wasi = "42.0"
+anyhow = "1.0.102"

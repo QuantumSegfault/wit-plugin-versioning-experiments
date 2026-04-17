@@ -1,0 +1,50 @@
+package test:plugin@0.1.4;
+
+@since(version = 0.1.0)
+interface logging {
+    @since(version = 0.1.0)
+    @deprecated(version = 0.1.3)
+    log: func(msg: string);
+
+    @since(version = 0.1.3)
+    enum severity {
+        trace,
+        debug,
+        warning,
+        info,
+        error,
+        fatal-error
+    }
+    @since(version = 0.1.3)
+    log2: func(severity: severity, msg: string);
+
+    @since(version = 0.1.4)
+    trace: func(msg: string);
+
+    @since(version = 0.1.4)
+    debug: func(msg: string);
+
+    @since(version = 0.1.4)
+    warning: func(msg: string);
+
+    @since(version = 0.1.4)
+    info: func(msg: string);
+
+    @since(version = 0.1.4)
+    error: func(msg: string);
+
+    @since(version = 0.1.4)
+    fatal-error: func(msg: string);
+}
+
+@since(version = 0.1.0)
+interface exports {
+    @since(version = 0.1.0)
+    execute: func();
+}
+
+world plugin {
+    import logging;
+
+    export exports;
+}

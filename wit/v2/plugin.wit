@@ -1,0 +1,31 @@
+package test:plugin@0.2.0;
+
+interface logging {
+    enum severity {
+        trace,
+        debug,
+        warning,
+        info,
+        error,
+        fatal-error
+    }
+
+    log: func(severity: severity, msg: string);
+
+    trace: func(msg: string);
+    debug: func(msg: string);
+    warning: func(msg: string);
+    info: func(msg: string);
+    error: func(msg: string);
+    fatal-error: func(msg: string);
+}
+
+interface exports {
+    init: func();
+    execute: func();
+    deinit: func();
+}
+world plugin {
+    import logging;
+    export exports;
+}

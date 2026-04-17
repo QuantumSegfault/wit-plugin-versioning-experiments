@@ -1,0 +1,20 @@
+package test:plugin@0.1.0;
+
+@since(version = 0.1.0)
+interface logging {
+    @since(version = 0.1.0)
+    log: func(msg: string);
+}
+
+@since(version = 0.1.0)
+interface exports {
+    @since(version = 0.1.0)
+    execute: func();
+}
+
+@since(version = 0.1.0)
+world plugin {
+    import logging;
+
+    export exports;
+}
